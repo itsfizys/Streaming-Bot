@@ -11,7 +11,6 @@ Stream any video into a Discord voice channel 24/7, automatically looping.
 - Streams an MP4 file on a continuous loop into any voice channel
 - Auto-reconnects if disconnected
 - Clean colored console output
-- Token kept outside of config for safety
 
 ---
 
@@ -38,22 +37,13 @@ cd Streaming-Bot
 npm install
 ```
 
-### 3. Add your token
+### 3. Configure the bot
 
-Create a file called `token.txt` in the root of the project and paste your Discord token inside:
-
-```
-YOUR_TOKEN_HERE
-```
-
-> `token.txt` is gitignored and will never be pushed to GitHub.
-
-### 4. Configure the bot
-
-Open `config.js` and fill in your server and channel IDs:
+Open `config.js` and fill in your token, server ID and channel ID:
 
 ```js
 module.exports = {
+    token: 'YOUR_TOKEN_HERE',
     server: {
         id:      'YOUR_GUILD_ID',
         channel: 'YOUR_VOICE_CHANNEL_ID'
@@ -70,11 +60,11 @@ module.exports = {
 };
 ```
 
-### 5. Add your video
+### 4. Add your video
 
 Place your video file in the root directory and make sure the filename matches `stream.file` in `config.js` (default: `stream.mp4`).
 
-### 6. Run
+### 5. Run
 
 ```bash
 node index.js
