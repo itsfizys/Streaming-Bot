@@ -46,14 +46,9 @@ function banner() {
 // ─── helpers ─────────────────────────────────────────────────────────────────
 
 function loadToken() {
-    const file = './token.txt';
-    if (!fs.existsSync(file)) {
-        log.error(`${c.red}token.txt not found. Create it and paste your token inside.${c.reset}`);
-        process.exit(1);
-    }
-    const token = fs.readFileSync(file, 'utf-8').trim();
-    if (!token) {
-        log.error('token.txt is empty.');
+    const token = cfg.token?.trim();
+    if (!token || token === 'YOUR_TOKEN_HERE') {
+        log.error('No token set. Add your token to config.js');
         process.exit(1);
     }
     return token;

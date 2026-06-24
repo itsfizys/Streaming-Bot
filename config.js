@@ -1,4 +1,5 @@
 module.exports = {
+    token: 'YOUR_TOKEN_HERE',
     server: {
         id:      'YOUR_GUILD_ID',
         channel: 'YOUR_VOICE_CHANNEL_ID'
